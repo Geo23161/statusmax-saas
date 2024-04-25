@@ -26,7 +26,7 @@ import './theme/variables.css';
 
 //const base = "http://192.168.43.244:8080/"
 //const base = "http://localhost:8080/"
-const base_url = "https://statusmax.onrender.com/"
+const base = "https://statusmax.onrender.com/"
 
 axios.defaults.baseURL = base
 
