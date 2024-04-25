@@ -39,7 +39,7 @@
           </div>
           <div style="padding: 0.9rem 1rem; text-align: center;">
             <div style="font-size: 1rem; font-weight: bold;">
-              Vous n'avez ajoutez aucune campagne
+              Vous n'avez ajouté aucune campagne
             </div>
             <div style="font-size: 0.9rem; padding-top: 1rem; ">
               Ajoutez votre campagne maintenant pour augmenter vos ventes
@@ -382,7 +382,7 @@ const has_next = ref(false)
 const aOpen = ref(false)
 const loading = ref(false)
 const no_data = ref(false)
-const is_on = ref(true)
+const is_on = ref(false)
 const yOpen = ref(false)
 
 const target_post = ref({
