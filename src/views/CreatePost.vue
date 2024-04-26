@@ -324,6 +324,7 @@ const create_compaign = async () => {
         }
     })
     if (resp.data['done']) {
+        load.dismiss();
         router.push('/post/' + resp.data['result'] + '/')
     }
 }
