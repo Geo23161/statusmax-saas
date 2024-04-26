@@ -229,26 +229,11 @@
   
   
   onIonViewDidEnter(async () => {
-    const new_ = localStorage.getItem('new_p')
-    if (new_) {
-      const creds : {email: string, password: string} = JSON.parse(new_);
-      email.value =  creds.email;
-      password.value = creds.password;
-      localStorage.removeItem('new_p');
-      await connect();
-    }
-    const is_connected = await check_connect();
-    if (is_connected) {
-      now_connected.value= true
-    } else {
-      const storage = new Storage({
-        name: "x_info",
-      });
-      storage.create();
-      const emailo: string | undefined = await storage.get("email");
-      const passwordo: string | undefined = await storage.get("password");
-      if (emailo) email.value = emailo as string;
-      if (passwordo) password.value = passwordo;
-    }
+    const storage = new Storage({
+          name: "x_info",
+        });
+        storage.create();
+    const tokens = await storage.get('tokens')
+    if(tokens) now_connected.value = true;
   });
   </script>
