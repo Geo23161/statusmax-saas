@@ -214,8 +214,12 @@
         });
         storage.create();
         storage.set("tokens", JSON.stringify(resp.data));
+        storage.set("idents", JSON.stringify({
+        email :  email.value,
+        password: password.value
+      }))
   
-        now_connected.value = true
+        router.push('/tabs/');
       })
       .catch((err) => {
         load.dismiss();
@@ -233,7 +237,12 @@
           name: "x_info",
         });
         storage.create();
-    const tokens = await storage.get('tokens')
-    if(tokens) now_connected.value = true;
+    let idents = await storage.get('idents')
+    if(idents) {
+      idents = JSON.parse(idents);
+      email.value = idents.email
+      password.value = idents.password
+      await connect()
+    } 
   });
   </script>
