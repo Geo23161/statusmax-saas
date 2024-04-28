@@ -242,7 +242,7 @@
       idents = JSON.parse(idents);
       email.value = idents.email
       password.value = idents.password
-      await connect()
+      //await connect()
     } 
   });
   </script>
